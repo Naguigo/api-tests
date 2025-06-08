@@ -1,0 +1,13 @@
+{
+  "name": "api-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.0.0",
+    "@playwright/test": "^1.40.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  }
+}

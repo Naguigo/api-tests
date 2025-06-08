@@ -1,0 +1,37 @@
+name: Run API Tests (Playwright + Cucumber)
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright Browsers (opcional, mas recomendado para outros contextos)
+        run: npx playwright install --with-deps
+
+      - name: Run API tests (Cucumber)
+        run: npm test
+        # ou, se seu script for diferente:
+        # run: npx cucumber-js
+
+      # Opcional: salvar relatórios/artifacts
+      # - name: Upload test results
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: cucumber-reports
+      #     path: ./relatorio
