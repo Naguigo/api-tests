@@ -29,9 +29,9 @@ jobs:
         # ou, se seu script for diferente:
         # run: npx cucumber-js
 
-      # Opcional: salvar relatórios/artifacts
-      # - name: Upload test results
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: cucumber-reports
-      #     path: ./relatorio
+    
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-reports
+          path: ./relatorio
